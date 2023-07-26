@@ -16,16 +16,16 @@ mongoose
   });
 
 // deployement config
-// const path = require("path");
-// __dirname = path.resolve();
+const path = require("path");
+__dirname = path.resolve();
 
 // render depolyment
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "/frontend/build")));
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
-//   });
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+  });
+}
 
 // Middleware
 app.use(express.json());
